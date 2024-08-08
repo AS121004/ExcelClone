@@ -1,3 +1,5 @@
+Excel Clone
+
 This project is a simple clone of Microsoft Excel, developed to replicate essential spreadsheet functionalities such as cell editing, formula evaluation, and sheet navigation.
 It is an educational tool that demonstrates how fundamental spreadsheet operations work under the hood.
 
