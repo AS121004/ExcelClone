@@ -1,0 +1,375 @@
+body{
+    margin: 0;
+    overflow: hidden;
+}
+
+*{
+    box-sizing: border-box; /*includes border-width in screen itself*/
+    font-size: 40;
+    /* margin: 0; */
+}
+
+.container {
+    height: 100vh;
+    position: relative;
+    /* border: 2px solid red; */
+
+}
+
+.title-bar{
+    height: 5vh;
+    background-color: #107c41;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-bar{
+    height: 5vh;
+    background-color: #107c41;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu-item{
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-item.selected{
+    background-color: white;
+    color: #107c41;
+    
+}
+
+.menu-item:hover{
+    background-color: #0c6735;
+    cursor: pointer;
+}
+
+.menu-item.selected:hover{
+    background-color: white;
+    cursor: default;
+}
+
+.menu-icon-bar{
+    height: 6vh;
+    background-color: rgb(233, 229, 229);
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon{
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menu-icon:hover{
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+.selector{
+    height: 30px;
+    font-size: 18px;
+}
+
+.font-family-selector{
+    width: 150px;
+    font-family: 'Noto Sans';
+}
+
+.formula-bar{
+    height: 5vh;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    background-color: rgb(226, 222, 222);
+}
+
+.data-container{
+    height: 75vh;
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+}
+
+.select-all{
+    width: 30px;
+    height: 30px;
+    border: 1px solid lightgray;
+}
+
+.column-name-container{
+    width: calc(100vw - 35px);
+    height: 30px;
+    border: 1px solid lightgray;
+    display: flex;
+    overflow: hidden; /*so that when scrolled it will be shown*/
+}
+
+.row-name-container{
+    width: 30px;
+    overflow: hidden;
+    height: calc(75vh - 30px);
+    border: 1px solid lightgray;
+    /* overflow: hidden; */
+
+}
+
+.input-cell-container{
+    width: calc(100vw - 35px);
+    height: calc(75vh - 30px);
+    overflow: scroll;
+
+}
+
+.sheet-bar{
+    height: 4vh;
+    display: flex;
+    align-items: center;
+    
+}
+
+.scroller{
+    width: 70px;
+}
+
+.icon-left-scroll, .icon-right-scroll{
+    font-size: 30px;
+}
+
+.icon-left-scroll:hover, .icon-right-scroll:hover{
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+.icon-add{
+    color: #107c41;
+    width: 40px;
+}
+
+.icon-add:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.sheet-tab-container{
+    width: calc(100vw - 110px);
+    border: 1px solid lightgrey;
+    display: flex;
+}
+
+.sheet-tab {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border-right: 1px solid lightgrey;
+}
+
+.sheet-tab.selected{
+    border-bottom: 4px solid #107c41;
+}
+
+.sheet-tab:hover{
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+.sheet-tab.selected:hover{
+    cursor: default;
+    background-color: white;
+}
+
+.sheet-tab:hover{
+    cursor: default;
+}
+
+.column-name{
+    min-width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-right: 1px solid lightgray;
+}
+
+.row-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 25px;
+    border-bottom: 1px solid lightgray;
+}
+
+.cell-row{
+    display: flex;
+}
+
+.input-cell{
+    min-width: 100px;
+    min-height: 25px;
+    outline-color: #107c41;
+    border-right: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    font-size: 14px;
+    font-family: 'Noto Sans';
+}
+
+.input-cell.selected{
+    border: 2px solid #107c41;
+}
+
+.formula-editor{
+    height: 70%;
+    border: 1px solid lightgray;
+    background-color: white;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    display: flex;
+    align-items: center;
+}
+
+.selected-cell{
+    width: 120px;
+
+}
+
+.function-sign{
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formula-input{
+    width: calc(100vw - 160px);
+    outline-color: #107c41;
+}
+
+.menu-icon.selected{
+    background-color: lightgray;
+}
+
+.input-cell.top-cell-selected{
+    border-top: none;
+}
+
+.input-cell.bottom-cell-selected{
+    border-bottom: 1px solid lightgray;
+}
+
+.input-cell.right-cell-selected{
+    border-right: 1px solid lightgray;
+}
+
+.input-cell.left-cell-selected{
+    border-left: none;
+}
+
+.icon-color-fill, .icon-color-text{
+    position: relative;
+}
+
+.color-picker{
+    position: absolute;
+    width: 28px;
+    height: 10px;
+    padding: 0px;
+    border: none;
+    top: 25.5px;
+    left: 8px;
+    cursor: pointer;
+}
+
+.sheet-options-modal{
+    position: absolute;
+    bottom: 4vh;
+    background-color: white;
+    height: 60px;
+    width: 70px;
+    left: 50px;
+    box-shadow: 0 0 10px 3px lightgray;
+}
+
+.sheet-rename, .sheet-delete{
+    height: 30px;
+    font-weight: 500;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sheet-rename:hover, .sheet-delete:hover{
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.sheet-rename-modal{
+    position: absolute;
+    height: 180px;
+    width: 300px;
+    top: calc(100vh / 2 - 90px);
+    left: calc(100vw / 2 - 150px);
+    background-color: white;
+    text-align: center;
+    box-shadow: 0 0 10px 3px lightgray;
+    
+}
+
+.action-buttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.modal-title{
+    font-size: 20px;
+}
+
+.new-sheet-name{
+    height: 26px;
+    font-size: 18px;
+    outline-color: #107c41;
+}
+
+.submit-button{
+    cursor: pointer;
+    background-color: #107c41;
+    color: lightgray;
+    padding: 8px;
+}
+
+.cancel-button{
+    cursor: pointer;
+    background-color: rgb(110, 109, 109);
+    padding: 8px;
+}
+
+.submit-button:hover{
+    background-color: rgb(165, 163, 163);
+    color: #107c41;
+}
+
+.cancel-button:hover{
+    background-color: black;
+    color: white;
+}
